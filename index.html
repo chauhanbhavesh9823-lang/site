@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NS-3 Installation Guide</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar">
+    <div class="nav-container">
+        <h2 class="logo">NS-3 Guide</h2>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            
+        </ul>
+    </div>
+</nav>
+
+<!-- ================= HEADER ================= -->
+
+
+<!-- ================= MAIN CONTENT ================= -->
+<main class="container">
+
+<!-- ================= STEP 1 ================= -->
+<section class="section" id="virtualbox">
+    <h2>Step 1: Install VirtualBox</h2>
+
+    <p>VirtualBox allows you to run Ubuntu inside your computer safely.</p>
+
+    <h3>Download VirtualBox</h3>
+    <ol>
+        <li>Open your web browser</li>
+        <li>
+            Visit the official website:
+            <a href="https://www.virtualbox.org" target="_blank">
+                https://www.virtualbox.org
+            </a>
+        </li>
+        <li>Click <strong>Downloads</strong></li>
+        <li>Download VirtualBox for Windows</li>
+        <li>Download Extension Pack (7.2.2) or etc</li>
+    </ol>
+
+    <div class="screenshot-box">
+        <img class="img" src="images/virtualboxsite.png" alt="VirtualBox download page">
+    </div>
+
+    <h3>Install VirtualBox</h3>
+    <ol>
+        <li>Open the installer</li>
+        <li>Click <strong>Next</strong> on all screens</li>
+        <li>Click <strong>Install</strong></li>
+    </ol>
+
+    <img class="img" src="images/virtualbox.png" alt="VirtualBox setup">
+</section>
+
+<!-- ================= STEP 2 ================= -->
+<section class="section" id="ubuntu">
+    <h2>Step 2: Install Ubuntu in VirtualBox</h2>
+
+    <p>Ubuntu is required because NS-3 works best on Linux.</p>
+
+    <h3>Download Ubuntu ISO</h3>
+    <ol>
+        <li>Visit the official Ubuntu website</li>
+        <li>
+            Download Intel or AMD 64-bit ISO:
+            <a href="https://ubuntu.com/download/desktop" target="_blank">
+                https://ubuntu.com/download/desktop
+            </a>
+        </li>
+        <li>Open VirtualBox and click <strong>New</strong></li>
+        <li>Browse and select the ISO file</li>
+    </ol>
+
+    <img class="img" src="images/ubantu.png" alt="Ubuntu download">
+    <img class="img" src="images/ubentusetup.png" alt="Ubuntu setup">
+
+    <h3>Recommended Settings</h3>
+    <ul>
+        <li>RAM: 4 GB (depends on system)</li>
+        <li>CPU: 2 cores</li>
+        <li>Disk: 25 GB</li>
+    </ul>
+
+    <img class="img" src="images/ubantudashbord.png" alt="Ubuntu dashboard">
+</section>
+
+<!-- ================= STEP 3 ================= -->
+<section class="section">
+    <h2>Step 3: Install NS-3 in Ubuntu</h2>
+
+    <p>First download the NS-3 file and extract it.</p>
+    <img class="img" src="images/ns3download.png" alt="NS-3 download">
+
+    <h3>Step 3.1: Update Ubuntu</h3>
+    <pre>
+sudo apt update
+sudo apt upgrade -y
+    </pre>
+
+    
+
+    <h3>Step 3.2: Install Dependencies</h3>
+    <pre>
+sudo apt install gcc g++ python3 python3-dev cmake git wget \
+qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools \
+libsqlite3-dev libxml2-dev libgtk-3-dev -y
+    </pre>
+
+    
+
+    <h3>Step 3.3: Build NS-3</h3>
+    <pre>
+cd ns-allinone-3.41/ns-3.41
+./ns3 configure --enable-examples --enable-tests
+./ns3 build
+    </pre>
+
+    
+</section>
+
+<!-- ================= QUICK LINKS ================= -->
+
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+    <p>© 2025 | NS-3 Installation Guide | Beginner Friendly</p>
+</footer>
+
+</body>
+</html>
